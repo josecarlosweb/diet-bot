@@ -26,25 +26,31 @@ The file `weeklyDiet.js` contains the list of meals and igredients.
 ```js
 export const weeklyDiet = [
   {
-    weekNumber: 1,
-    meals: [
-      {
-        day: "monday",
-        breakfast: "1 xícara de café com leite desnatado...",
-        morningSnack: "1 Maçã",
-        lunch: " 1 porção de carne magra grelhada...",
-        afternoonSnack: '1 punhado de castanhas',
-        dinner: '1 porção de peito de frango assado, 1/2 xícara de quinoa cozida...',
-        supper: '1 xícara de chá de erva-cidreira'
-      },
+    breakfast: [
+      "1 xícara de café com leite desnatado, 1 fatia de pão integral, 1 ovo mexido e 1/2 abacate",
+      "1 xícara de café com leite desnatado, 1 fatia de pão integral com 1 colher de sopa de pasta de amendoim sem açúcar, 1/2 banana e 1 ovo cozido",
+     ...
+    ],
+    morningSnack: ["1 Maçã", "1 pera", "1 laranja", "1 banana"],
+    lunch: [
+      "1 filé de frango grelhado, 1/2 xícara de arroz integral, 1 xícara de legumes cozidos no vapor (brócolis, cenoura e vagem) e salada de folhas verdes",
+      "1 porção de frango cozido com molho de tomate caseiro, 1/2 xícara de arroz integral, 1 xícara de legumes cozidos no vapor (berinjela substituída por abobrinha, cenoura e couve-flor) e salada de folhas verdes",
+     ...
+    ],
+    afternoonSnack: [
+      "1 iogurte desnatado com 1 colher de sopa de sementes de chia",
       ...
     ],
+    dinner: [
+      "1 porção de carne magra grelhada (patinho, alcatra ou filé mignon), 1/2 xícara de batata-doce cozida, 1 xícara de legumes cozidos no vapor (chuchu, cenoura e brócolis) e salada de folhas verdes",
+      ...
+    ],
+    supper: [
+      "1 xícara de chá de camomila", "1 xícara de chá de erva-cidreira"...
+    ],
     shoppingList: [
-      proteins: [
-        'Peito de frango (500g)',
-        'Atum enlatado em água (4 latas)'
-        ...
-      ]
+      "Peito de frango (500g)", "Atum enlatado em água (4 latas)", "Ovos (1 dúzia)", "Iogurte grego sem açúcar (4 unidades)", "Batata doce (500g)", "Arroz integral (500g)", "Pão integral (1 unidade por dia)",
+      ...
     ]
   },
 ];

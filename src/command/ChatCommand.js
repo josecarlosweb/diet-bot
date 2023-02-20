@@ -8,7 +8,7 @@ export default class ChatCommand {
     this.chatId = chatId;
   }
 
-  respond() {
+  respond(message = '') {
     return null;
   }
 

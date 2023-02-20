@@ -6,7 +6,7 @@ export default class ShoppingListCommand extends ChatCommand {
     super({ bot, command: SHOPPING_LIST_COMMAND, chatId });
   }
 
-  respond() {
+  respond(message = '') {
 
   }
 

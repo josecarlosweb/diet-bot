@@ -10,7 +10,7 @@ dotenv.config();
 const commandsRegex = new RegExp(`/(${SHOPPING_LIST_COMMAND}|${DAY_DIET_COMMAND}|${AUTO_POST_COMMAND})@simpledietbot`);
 
 const token = process.env.BOT_TOKEN || "";
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(commandsRegex, (msg, match) => {
 
@@ -18,11 +18,10 @@ bot.onText(commandsRegex, (msg, match) => {
   const message = match[0];
 
   //console.log(chatId, getPureCommand(message));
-  
-  const getCommandArgs = {bot, chatId, command: getPureCommand(message)};
+
+  const getCommandArgs = { bot, chatId, command: getPureCommand(message) };
   const command = getCommand(getCommandArgs);
   command.action();
-  command.respond();
 
 });
 
