@@ -1,3 +1,4 @@
+import { createOrUpdate } from "../../database/database.js";
 import { AUTO_POST_COMMAND } from "../constants.js";
 import ChatCommand from './ChatCommand.js'
 
@@ -7,10 +8,10 @@ export default class AutoPostCommand extends ChatCommand {
   }
 
   respond(){
-    this.bot.sendMessage(this.chatId, "AutoPostCommand is Responding");
+    this.bot.sendMessage(this.chatId, "Ok. I will send you the daly diet and weekly shopping list");
   }
 
   action(){
-
+    createOrUpdate(this.chatId.toString());
   }
 }
