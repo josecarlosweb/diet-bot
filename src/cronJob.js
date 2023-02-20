@@ -4,7 +4,7 @@ import DayDietCommand from "./command/DayDietCommand.js";
 
 export const dailyJob = (bot) => {
   //00 00 12 * * *
-  return new CronJob('10 * * * * *', () => {
+  return new CronJob('00 00 12 * * *', () => {
     const now = new Date();
     console.log(now, "Starting job execution");
     getAll()
