@@ -1,3 +1,5 @@
+import { weeklyDiet } from "../database/weeklyDiet.js";
+
 export const getPureCommand = rawMessage => {
   if (!rawMessage) {
     return "";
@@ -11,3 +13,5 @@ export const getRandomPosition = (arrayList = []) => {
 
   return { position, item };
 }
+
+export const dietPositionAndItem = (weeklyDiet.length > 1) ? getRandomPosition(weeklyDiet) : { position: 0, item: weeklyDiet[0] }

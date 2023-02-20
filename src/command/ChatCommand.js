@@ -9,7 +9,7 @@ export default class ChatCommand {
   }
 
   respond(message = '') {
-    return null;
+    this.bot.sendMessage(this.chatId, message);
   }
 
   action() {

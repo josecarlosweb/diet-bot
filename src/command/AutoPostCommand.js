@@ -7,12 +7,12 @@ export default class AutoPostCommand extends ChatCommand {
     super({bot, command: AUTO_POST_COMMAND, chatId});
   }
 
-  respond(message = ''){
-    this.bot.sendMessage(this.chatId, "Ok. I will send you the daly diet and weekly shopping list");
-  }
-
   action(){
-    createOrUpdate(this.chatId.toString());
-    this.respond();
+    createOrUpdate(this.chatId.toString())
+    .then(response => {
+      console.log(response);
+      this.respond("Ok. I will send you the daly diet and weekly shopping list");
+    });
+    
   }
 }

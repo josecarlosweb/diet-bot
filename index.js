@@ -3,6 +3,7 @@ import TelegramBot from "node-telegram-bot-api";
 import dotenv from 'dotenv';
 import { getCommand } from "./src/CommandBuilder.js";
 import { getPureCommand } from "./src/utils.js";
+import { dailyJob } from "./src/cronJob.js";
 
 //load .env file
 dotenv.config();
@@ -28,3 +29,6 @@ bot.onText(commandsRegex, (msg, match) => {
 bot.on('polling_error', (error) => {
   console.log(error);  // => 'EFATAL'
 });
+
+const job = dailyJob(bot);
+job.start();
