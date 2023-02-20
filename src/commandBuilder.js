@@ -4,22 +4,24 @@ import ShoppingListCommand from './command/ShoppingListCommand.js';
 import DayDietCommand from './command/DayDietCommand.js';
 import AutoPostCommand from './command/AutoPostCommand.js';
 
-export const getCommand = (bot, message) => {
+export const getCommand = ({bot, chatId, command}) => {
   
-  let command = new ChatCommand(bot, message);
+  let commandClass = new ChatCommand({bot, command, chatId});
 
-  switch(message){
+  const defaultArgs = {bot, chatId};
+
+  switch(command){
 
     case SHOPPING_LIST_COMMAND:
-      command = new ShoppingListCommand(bot);
+      commandClass = new ShoppingListCommand(defaultArgs);
       break;
     case DAY_DIET_COMMAND:
-      command = new DayDietCommand(bot);
+      commandClass = new DayDietCommand(defaultArgs);
       break;
     case AUTO_POST_COMMAND:
-      command = new AutoPostCommand(bot);
+      commandClass = new AutoPostCommand(defaultArgs);
       break;
   }
 
-  return command;
+  return commandClass;
 }

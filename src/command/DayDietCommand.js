@@ -3,11 +3,11 @@ import ChatCommand from "./ChatCommand.js";
 
 export default class DayDietCommand extends ChatCommand {
 
-  constructor(bot) {
-    super(bot, DAY_DIET_COMMAND);
+  constructor({bot, chatId}) {
+    super({bot, command: DAY_DIET_COMMAND, chatId});
   }
 
-  respond(chatId) {
+  respond() {
 
   }
 

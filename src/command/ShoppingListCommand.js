@@ -2,15 +2,15 @@ import { SHOPPING_LIST_COMMAND } from "../constants.js";
 import ChatCommand from "./ChatCommand.js";
 
 export default class ShoppingListCommand extends ChatCommand {
-  constructor(bot){
-    super(bot, SHOPPING_LIST_COMMAND);
+  constructor({ bot, chatId }) {
+    super({ bot, command: SHOPPING_LIST_COMMAND, chatId });
   }
 
-  respond(chatId){
+  respond() {
 
   }
 
-  action(){
+  action() {
 
   }
 

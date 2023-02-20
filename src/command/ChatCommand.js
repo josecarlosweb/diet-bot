@@ -1,12 +1,14 @@
 import { deleteChat } from "../../database/database.js";
 
 export default class ChatCommand {
-  constructor(bot, command) {
+
+  constructor({bot, command, chatId}) {
     this.bot = bot;
     this.command = command;
+    this.chatId = chatId;
   }
 
-  respond(chatId) {
+  respond() {
     return null;
   }
 
@@ -14,8 +16,8 @@ export default class ChatCommand {
     return null;
   }
 
-  onErrorSendMessage(chatId){
-    deleteChat(chatId)
+  onErrorSendMessage(){
+    deleteChat(this.chatId)
     .then(response => console.log("Chat deleted", response));
   }
 }

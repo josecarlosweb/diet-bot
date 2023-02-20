@@ -17,11 +17,12 @@ bot.onText(commandsRegex, (msg, match) => {
   const chatId = msg.chat.id;
   const message = match[0];
 
-  console.log(chatId, getPureCommand(message));
+  //console.log(chatId, getPureCommand(message));
   
-  const command = getCommand(bot, getPureCommand(message));
+  const getCommandArgs = {bot, chatId, command: getPureCommand(message)};
+  const command = getCommand(getCommandArgs);
   command.action();
-  command.respond(chatId);
+  command.respond();
 
 });
 
