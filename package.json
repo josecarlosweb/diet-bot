@@ -27,6 +27,9 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.61.0"
+    "cron": "^2.2.0",
+    "dotenv": "^16.0.3",
+    "node-telegram-bot-api": "^0.61.0",
+    "pouchdb": "^8.0.1"
   }
 }
